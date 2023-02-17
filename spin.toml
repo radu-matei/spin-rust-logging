@@ -1,0 +1,15 @@
+spin_version = "1"
+authors = ["Radu Matei <radu.matei@fermyon.com>"]
+description = ""
+name = "logging"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "logging"
+source = "target/wasm32-wasi/release/logging.wasm"
+allowed_http_hosts = []
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
